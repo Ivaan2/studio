@@ -189,6 +189,18 @@ Si tienes problemas:
 
 ---
 
+## 🚀 Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para mantener un entorno serverless y una integración nativa con Firestore, Firebase Auth y, si aplica, Firebase Storage.
+
+## ✅ Justificación técnica de las decisiones
+
+- **Firestore (NoSQL, schemaless)**: flexibilidad para evolucionar el modelo de congeladores sin rigidez de esquema.
+- **Serverless + pago por uso**: menor complejidad operativa y coste bajo en la capa gratuita.
+- **Google OAuth2**: login sin fricción y aislamiento por UID para evitar acceso entre usuarios.
+
+---
+
 **¡Tu backend está listo! 🚀**
 
 Ahora solo necesitas:

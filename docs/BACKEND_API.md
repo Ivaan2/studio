@@ -376,3 +376,15 @@ src/
 - [ ] Agregar logging de auditoría
 - [ ] Implementar soft delete
 - [ ] Agregar versionado de items
+
+---
+
+## 🚀 Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para obtener SSR en Next.js y una integración natural con Firebase (Auth, Firestore y, si aplica, Storage).
+
+## ✅ Justificación técnica de las decisiones
+
+- **Firestore (NoSQL, schemaless)**: permite modelar el estado de congeladores sin rigidez de esquema y con evolución rápida del modelo.
+- **Serverless + pago por uso**: reduce infraestructura y acelera el time‑to‑market, con bajo coste en la capa gratuita.
+- **Google OAuth2**: inicio de sesión sin fricción y datos asociados al UID; evita acceso a congeladores ajenos.

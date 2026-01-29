@@ -492,3 +492,15 @@ if (!auth.currentUser) {
 ---
 
 ¡Listo para usar! 🚀
+
+---
+
+## 🚀 Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para mantener una latencia mínima con Firestore y, si aplica, Firebase Storage, además de aprovechar SSR en Next.js.
+
+## ✅ Justificación técnica de las decisiones
+
+- **Firestore (NoSQL, schemaless)**: flexibilidad para evolucionar el modelo de congeladores.
+- **Serverless + pago por uso**: rapidez de salida al mercado y costes bajos para proyectos open‑source.
+- **Google OAuth2**: login sin fricción y asociación de datos por UID, evitando acceso a datos de terceros.

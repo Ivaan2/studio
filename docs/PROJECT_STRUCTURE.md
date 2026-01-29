@@ -198,6 +198,18 @@ Valida:
 ✓ freezerId (ID válido de Firestore)
 ```
 
+---
+
+## 🚀 Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para maximizar la integración con Firebase (Auth, Firestore y, si aplica, Storage) y reducir la latencia entre la app y la base de datos.
+
+## ✅ Justificación técnica de las decisiones
+
+- **Firestore (NoSQL, schemaless)**: modelo flexible para estados de congeladores.
+- **Serverless + pago por uso**: elimina infraestructura y acelera el time‑to‑market.
+- **Google OAuth2**: login sin fricción y datos asociados al UID; la UI parte de dos congeladores por defecto por usuario.
+
 ### 3. **Autenticación** (`src/lib/auth.ts`)
 ```
 Verifica:

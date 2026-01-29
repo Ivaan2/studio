@@ -1,6 +1,6 @@
-# FreezerFriend Detailed Documentation
+# MisCongelados Detailed Documentation
 
-This document provides a deep dive into the project structure, components, and logic of the FreezerFriend application.
+This document provides a deep dive into the project structure, components, and logic of the MisCongelados application.
 
 ## Project Structure
 
@@ -126,3 +126,20 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-storage-bucket
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
 NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
 ```
+
+## Deploy (Google App Hosting)
+
+El despliegue recomendado para este proyecto es **Google App Hosting (Firebase App Hosting)**, ya que ofrece un camino directo para aplicaciones Next.js con SSR y una integración natural con Firebase (Auth, Firestore y, si se usa, Storage). Esto reduce latencias con la base de datos, simplifica el mantenimiento y permite escalar bajo demanda sin gestionar infraestructura.
+
+Pasos a alto nivel:
+1. Conectar el repositorio (GitHub) al backend de App Hosting.
+2. Mantener `apphosting.yaml` en la raíz y ajustar los parámetros de ejecución si es necesario.
+3. Configurar variables y secretos en el panel de App Hosting (especialmente credenciales del Admin SDK).
+4. Activar despliegues automáticos desde la rama principal.
+
+## Justificación técnica de las decisiones
+
+- **Base de datos (Cloud Firestore)**: modelo NoSQL y schemaless que permite almacenar el estado de congeladores sin rigidez en el esquema, favoreciendo iteración rápida del modelo de datos.
+- **Serverless y pago por uso**: elimina la necesidad de construir infraestructura, acelera el time-to-market y reduce costes; en la capa gratuita el consumo suele ser mínimo para proyectos open‑source.
+- **Objetivo de producto**: ayuda a recordar y gestionar alimentos sin abrir el congelador, evitando romper la cadena de frío y mejorando la conservación.
+- **Autenticación (Google OAuth2)**: inicio de sesión sin fricción y experiencia fluida. Los datos quedan asociados al UID de cada cuenta. La UI parte de dos congeladores por defecto por usuario y la API restringe el acceso por propietario, evitando acceso a congeladores ajenos.

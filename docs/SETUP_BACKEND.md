@@ -222,3 +222,22 @@ Para más detalles sobre los endpoints, validaciones y ejemplos:
 - [ ] Puedo crear, leer, actualizar y eliminar items
 
 ¡Listo! 🎉
+
+---
+
+## 🚀 Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para maximizar el rendimiento al convivir con Firestore, Firebase Auth y, si aplica, Firebase Storage.
+
+Pasos a alto nivel:
+1. Conecta el repositorio (GitHub) a un backend de App Hosting.
+2. Mantén el archivo `apphosting.yaml` y ajusta el runtime si es necesario.
+3. Configura variables y secretos del Admin SDK en el panel de App Hosting.
+4. Activa despliegues automáticos desde la rama principal.
+
+## ✅ Justificación técnica de las decisiones
+
+- **Base de datos (Cloud Firestore)**: NoSQL y schemaless, ideal para representar el estado de congeladores sin rigidez en el modelo.
+- **Serverless y pago por uso**: reduce la infraestructura operativa, acelera el time‑to‑market y mantiene costes bajos en la capa gratuita.
+- **Objetivo de producto**: facilita la conservación de alimentos al evitar abrir el congelador y romper la cadena de frío.
+- **Google OAuth2**: login sin fricción, asociación de datos por UID y aislamiento de acceso entre usuarios. La UI parte de dos congeladores por defecto por cuenta.

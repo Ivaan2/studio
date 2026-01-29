@@ -1,4 +1,4 @@
-# **App Name**: FreezerFriend
+# **App Name**: MisCongelados
 
 ## Core Features:
 
@@ -19,3 +19,13 @@
 - Minimalist design with a modular grid system for responsive display of food items.
 - Loading skeletons in the grid to represent the loading UX state.
 - Simple, intuitive icons for actions like adding or viewing food items, ensuring clarity and ease of use.
+
+## Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para maximizar el rendimiento junto a Firestore y, si aplica, Firebase Storage, simplificando la operación serverless.
+
+## Justificación técnica de las decisiones
+
+- **Firestore (NoSQL, schemaless)**: modelo flexible para representar el estado de congeladores.
+- **Serverless + pago por uso**: evita infraestructura propia y reduce costes en la capa gratuita.
+- **Google OAuth2**: login sin fricción y datos asociados al UID para evitar cruces entre usuarios.

@@ -5,8 +5,11 @@ import { AuthProvider } from '@/components/auth-provider';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'FreezerFriend',
+  title: 'MisCongelados',
   description: 'Mantén tu congelador organizado.',
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({

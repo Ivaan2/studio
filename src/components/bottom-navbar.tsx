@@ -68,6 +68,7 @@ export function BottomNavbar({
               <Button
                 variant="ghost"
                 className="relative h-10 w-10 rounded-full"
+                aria-label={user.displayName ?? 'Usuario'}
               >
                 <Avatar className="h-10 w-10">
                   <AvatarImage

@@ -11,7 +11,7 @@ export function Header({ freezerName }: { freezerName: string }) {
         <div className="mr-4 flex items-center">
           <Link href="/" className="flex items-center gap-2">
             <Refrigerator className="h-7 w-7 text-primary" />
-            <span className="font-headline text-xl font-bold">FreezerFriend</span>
+            <span className="font-headline text-xl font-bold">MisCongelados</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-center">

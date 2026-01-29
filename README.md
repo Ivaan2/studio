@@ -1,6 +1,6 @@
-# FreezerFriend - APP
+# MisCongelados - APP
 
-FreezerFriend is a web application designed to help you keep your freezer organized. Never again wonder what's buried in the back of your freezer!
+MisCongelados is a web application designed to help you keep your freezer organized. Never again wonder what's buried in the back of your freezer!
 
 ## Features
 
@@ -33,3 +33,20 @@ The project is set up to run in a development environment.
 ## Project Structure
 
 For a detailed breakdown of the project structure, components, and logic, please see the [DOCUMENTATION.md](docs/DOCUMENTATION.md) file.
+
+## Deploy (Google App Hosting)
+
+El despliegue recomendado es **Google App Hosting (Firebase App Hosting)** para maximizar la integración con Firebase (Auth, Firestore y, si se usa, Storage) y aprovechar SSR con escalado serverless.
+
+Pasos a alto nivel:
+1. Conecta el repositorio a App Hosting.
+2. Mantén `apphosting.yaml` en la raíz y ajusta los parámetros de ejecución.
+3. Configura variables y secretos del Admin SDK en el panel de App Hosting.
+4. Activa despliegues automáticos desde la rama principal.
+
+## Justificación técnica de las decisiones
+
+- **Firestore (NoSQL, schemaless)**: permite guardar el estado de congeladores sin rigidez de esquema y evolucionar el modelo con facilidad.
+- **Serverless + pago por uso**: reduce infraestructura, acelera time‑to‑market y mantiene costes bajos en un proyecto open‑source.
+- **Objetivo de producto**: recordatorio de alimentos para evitar abrir el congelador y romper la cadena de frío.
+- **Google OAuth2**: login sin fricción y datos asociados al UID. La UI parte de dos congeladores por defecto por usuario y la API evita acceso a congeladores ajenos.
