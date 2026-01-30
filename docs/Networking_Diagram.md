@@ -4,13 +4,13 @@ Diagrama de arquitectura a alto nivel con foco en el networking entre componente
 
 ```mermaid
 flowchart LR
-  user[Usuario\nNavegador] -->|HTTPS| front[Front\nNext.js UI]
+  user["Usuario\nNavegador"] -->|HTTPS| front["Front\nNext.js UI"]
 
-  subgraph google_cloud[Google Cloud / Firebase]
-    apphost[Google App Hosting]
-    back[Back\nAPI / Server]
-    auth[Google Auth\n(Firebase Auth / OAuth2)]
-    secrets[Google Secret Manager]
+  subgraph google_cloud["Google Cloud / Firebase"]
+    apphost["Google App Hosting"]
+    back["Back API / Server"]
+    auth["Google Auth (Firebase Auth / OAuth2)"]
+    secrets["Google Secret Manager"]
   end
 
   front -->|HTTPS| back
