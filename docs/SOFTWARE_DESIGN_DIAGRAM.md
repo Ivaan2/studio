@@ -8,7 +8,7 @@ sequenceDiagram
   participant UI as Front (Next.js Client)
   participant Auth as Google Auth (Firebase Auth / OAuth2)
   participant API as Back (API / Server)
-  participant FS as Firestore
+  participant FS as Firestore Storage
 
   U->>UI: Abre la app
   UI->>Auth: Inicia login con Google (OAuth2)
@@ -26,14 +26,13 @@ sequenceDiagram
   actor U as Usuario
   participant UI as Front (Next.js Client)
   participant API as Back (API / Server)
-  participant FS as Firestore
   participant ST as Firebase Storage
 
   U->>UI: Crea item (nombre, fecha, descripcion)
   UI->>ST: Upload data
   ST-->>UI: URL/metadata
   UI->>API: POST /items (data)
-  API->>FS: Guardar item en coleccion
-  FS-->>API: Item creado
+  API->>ST: Guardar item en coleccion
+  ST-->>API: Item creado
   API-->>UI: Respuesta OK
 ```
