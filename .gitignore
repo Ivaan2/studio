@@ -23,6 +23,10 @@
 # misc
 .DS_Store
 *.pem
+.idea
+.idx
+.modified
+.swc
 
 # debug
 npm-debug.log*
